@@ -1,4 +1,20 @@
 package org.example;
 
+import org.example.model.Employee;
+
+import java.util.List;
+
 public class FilterEmployee {
+    public static void main(String[] args) {
+        Employee e1= new Employee("Alice", 18);
+        Employee e2= new Employee("Bob", 25);
+        Employee e3= new Employee("Charlie", 19);
+        Employee e4= new Employee("David", 20);
+        Employee e5= new Employee("Eve", 22);
+        Employee e6= new Employee("Frank", 40);
+        List<Employee> employees = List.of(e1, e2, e3, e4, e5, e6);
+
+        //Filtering employees older than 20
+        employees.stream().filter(e->e.getAge()>20).forEach(e-> System.out.println(e.getName()));
+    }
 }
