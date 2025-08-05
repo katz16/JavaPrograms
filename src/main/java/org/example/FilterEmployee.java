@@ -16,5 +16,8 @@ public class FilterEmployee {
 
         //Filtering employees older than 20
         employees.stream().filter(e->e.getAge()>20).forEach(e-> System.out.println(e.getName()));
+        //Filtering employees and storing them in a new list
+        List<Employee>listOfEmpgreaterthan20=employees.stream().filter(e->e.getAge()>20).toList();
+        System.out.println("Employees older than 20: "+listOfEmpgreaterthan20.stream().map(Employee::getName).toList());
     }
 }
