@@ -19,5 +19,8 @@ public class FilterEmployee {
         //Filtering employees and storing them in a new list
         List<Employee>listOfEmpgreaterthan20=employees.stream().filter(e->e.getAge()>20).toList();
         System.out.println("Employees older than 20: "+listOfEmpgreaterthan20.stream().map(Employee::getName).toList());
+        //Counting emp whoes age is 25
+        Long empcount=employees.stream().filter(e->e.getAge()==25).count();
+        System.out.println("Number of employees with age 25: " + empcount);
     }
 }
