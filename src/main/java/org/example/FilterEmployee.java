@@ -3,6 +3,8 @@ package org.example;
 import org.example.model.Employee;
 
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class FilterEmployee {
     public static void main(String[] args) {
@@ -22,5 +24,9 @@ public class FilterEmployee {
         //Counting emp whoes age is 25
         Long empcount=employees.stream().filter(e->e.getAge()==25).count();
         System.out.println("Number of employees with age 25: " + empcount);
+
+        //Group by Employee name
+        Map<String,List<Employee>>empByName=employees.stream().collect(Collectors.groupingBy(Employee::getName));
+        System.out.println("Grouping by Employee name: "+empByName);
     }
 }
