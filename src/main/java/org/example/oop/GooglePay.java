@@ -27,5 +27,6 @@ public class GooglePay implements Payment{
         GooglePay g= new GooglePay();
         //calling addCoupon using GooglePay object
         g.addCoupon();
+
     }
 }
