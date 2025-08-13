@@ -23,5 +23,9 @@ public class GooglePay implements Payment{
         p.doTransaction(100);
         Payment.generateTransactionReport();
         GooglePay.generateTransactionReport();
+
+        GooglePay g= new GooglePay();
+        //calling addCoupon using GooglePay object
+        g.addCoupon();
     }
 }

@@ -12,5 +12,9 @@ public class AmazonPay implements Payment{
         p.addCoupon(); // Calls the default method from Payment interface
         p.doTransaction(200); // Calls the overridden method in AmazonPay
         Payment.generateTransactionReport(); // Calls the static method from Payment interface
+
+        AmazonPay a= new AmazonPay();
+        //calling addCoupon default method with AmazonPay object
+        a.addCoupon();
     }
 }
