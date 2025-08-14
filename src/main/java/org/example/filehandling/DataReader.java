@@ -1,10 +1,14 @@
-package org.example.filereader;
+package org.example.filehandling;
 
 import java.io.*;
 
 public class DataReader {
     public static void main(String[] args) {
         File file= new File("src/main/resources/readme.txt");
+        if(file.exists()){
+            System.out.println("File exist");
+
+        }
         try {
             BufferedReader br= new BufferedReader(new FileReader(file));
             while(br.readLine()!=null){
