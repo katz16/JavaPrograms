@@ -1,4 +1,4 @@
-package org.example;
+package org.example.immutable;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -9,11 +9,18 @@ public final class EmployeeImmutableClass {
     private final String name;
     private final Date doj;
     private final List<String> phoneno;
+    //Handling a mutable class inside immutable class
+    private AddressMutable address;
 
-    public EmployeeImmutableClass(String name, Date doj, List<String> phoneno) {
+    public AddressMutable getAddress() {
+        return new AddressMutable(this.address.getCity(), this.address.getZip()); // Return a new instance to maintain immutability
+    }
+
+    public EmployeeImmutableClass(String name, Date doj, List<String> phoneno, AddressMutable address) {
         this.name = name;
         this.doj = doj;
         this.phoneno = phoneno;
+        this.address = address; // AddressMutable is mutable, so we should be careful with how we handle it
     }
     //No setters are provided to maintain immutability
 
@@ -35,13 +42,15 @@ public final class EmployeeImmutableClass {
                 "name='" + name + '\'' +
                 ", doj=" + doj +
                 ", phoneno=" + phoneno +
+                ", address=" + address +
                 '}';
     }
 
     public static void main(String[] args) {
-        EmployeeImmutableClass e= new EmployeeImmutableClass("John Doe", new Date(), Arrays.stream(new String[]{"123","234"}).collect(Collectors.toList()));
+        AddressMutable address= new AddressMutable("New York", "10001");
+        EmployeeImmutableClass e= new EmployeeImmutableClass("John Doe", new Date(), Arrays.stream(new String[]{"123","234"}).collect(Collectors.toList()), address);
         e.getDoj().setDate(15);// This will not change the original date in the EmployeeImmutableClass
-
+        e.getAddress().setCity("Los Angeles"); // This will not change the original address in the EmployeeImmutableClass
         System.out.println(e);
     }
 }
