@@ -1,16 +1,16 @@
 package org.example;
 
-import java.util.Arrays;
-import java.util.Date;
+import java.util.*;
+import java.util.stream.Collectors;
 
 //mark the class as final to prevent inheritance
 public final class EmployeeImmutableClass {
     //mark all attributes as private and final
     private final String name;
     private final Date doj;
-    private final long[]phoneno;
+    private final List<String> phoneno;
 
-    public EmployeeImmutableClass(String name, Date doj, long[] phoneno) {
+    public EmployeeImmutableClass(String name, Date doj, List<String> phoneno) {
         this.name = name;
         this.doj = doj;
         this.phoneno = phoneno;
@@ -25,8 +25,8 @@ public final class EmployeeImmutableClass {
         return (Date) doj.clone();//Date is a mutable class, so we return a clone to maintain immutability
     }
 
-    public long[] getPhoneno() {
-        return phoneno;
+    public List<String> getPhoneno() {
+        return Collections.unmodifiableList(phoneno); // Return an unmodifiable view of the list to prevent modification
     }
 
     @Override
@@ -34,13 +34,14 @@ public final class EmployeeImmutableClass {
         return "EmployeeImmutableClass{" +
                 "name='" + name + '\'' +
                 ", doj=" + doj +
-                ", phoneno=" + Arrays.toString(phoneno) +
+                ", phoneno=" + phoneno +
                 '}';
     }
 
     public static void main(String[] args) {
-        EmployeeImmutableClass e= new EmployeeImmutableClass("John Doe", new Date(), new long[]{1234567890, 9876});
+        EmployeeImmutableClass e= new EmployeeImmutableClass("John Doe", new Date(), Arrays.stream(new String[]{"123","234"}).collect(Collectors.toList()));
         e.getDoj().setDate(15);// This will not change the original date in the EmployeeImmutableClass
+
         System.out.println(e);
     }
 }
