@@ -1,9 +1,7 @@
-package org.example;
+package org.example.stream;
 
-import javax.lang.model.element.NestingKind;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ReverseWords {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.stream;
 
 import org.example.model.Address;
 import org.example.model.Student;

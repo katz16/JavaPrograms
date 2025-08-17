@@ -1,10 +1,7 @@
-package org.example;
-
-import org.w3c.dom.ls.LSOutput;
+package org.example.stream;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Function;
 
 public class MultiplesOf5 {
     public static void main(String[] args) {

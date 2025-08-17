@@ -1,4 +1,4 @@
-package org.example;
+package org.example.stream;
 
 public class StringProblem2 {
 

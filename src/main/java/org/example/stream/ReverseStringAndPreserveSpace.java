@@ -1,4 +1,4 @@
-package org.example;
+package org.example.stream;
 
 import java.util.Scanner;
 //Try to understand this code and functionality

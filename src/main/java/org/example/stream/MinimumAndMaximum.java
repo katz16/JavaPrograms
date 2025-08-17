@@ -1,4 +1,4 @@
-package org.example;
+package org.example.stream;
 
 import java.util.Comparator;
 import java.util.List;
