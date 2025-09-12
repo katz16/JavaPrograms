@@ -3,6 +3,13 @@ Design patterns are typically categorized into three main types:
 Creational Patterns: These patterns deal with object creation mechanisms, aiming to increase flexibility and reuse of existing code.
 
     Singleton: Ensures a class has only one instance and provides a global access point to it.
+                During the application's lifecycle, only one object of a class is created.
+             Benefits:
+                Resource Saving: Reduces memory usage by preventing multiple instances.
+                Global Access: The single instance of the class can be accessed across all parts of the application.
+             Disadvantages:
+                Tight Coupling: Can lead to tight coupling between the singleton class and its clients.
+                Testing Challenges: Makes unit testing difficult due to the global state.
 
     Factory Method: Provides an interface for creating objects in a superclass, allowing subclasses to decide which class to instantiate.
 
@@ -43,7 +50,7 @@ Behavioral Patterns: These patterns are concerned with the responsibilities and 
     Template Method: Defines the skeleton of an algorithm in an operation, deferring some steps to subclasses.
 
     Chain of Responsibility: Avoids coupling the sender of a request to its receiver by giving multiple objects a chance to handle the request.
-    
+
     Interpreter: Given a language, defines a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the language.
 
     Memento: Captures and externalizes an object's internal state without violating encapsulation, so that the object can be restored to this state later.
