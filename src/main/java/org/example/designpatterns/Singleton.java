@@ -17,6 +17,8 @@ public class Singleton {
     public static void main(String[] args) {
         Singleton singleton1 = Singleton.getInstance();
         Singleton singleton2 = Singleton.getInstance();
+        System.out.println("Singleton Instance 1: " + singleton1.hashCode());
+        System.out.println("Singleton Instance 2: " + singleton2.hashCode());
 
         System.out.println("Are both instances the same? " + (singleton1 == singleton2));
     }
