@@ -1,0 +1,2 @@
+Recursion is a function calling itself.
+Each time the function will call itself with a simpler version of the original problem.
