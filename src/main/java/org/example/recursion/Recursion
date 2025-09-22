@@ -1,2 +1,8 @@
 Recursion is a function calling itself.
 Each time the function will call itself with a simpler version of the original problem.
+
+Types:
+// 1. Direct Recursion: A function is called direct recursive if it calls itself.
+// 2. Indirect Recursion: Function 1 calls Function 2 and Function 2 calls Function 1.
+// 3. Tail Recursion: The recursive call is the last operation in the function.
+// 4. Non-Tail Recursion: The recursive call is not the last operation in the function.
